@@ -16,14 +16,31 @@ class EmployeesTable
     {
         return $table
             ->columns([
-                TextColumn::make('first_name'),
-                TextColumn::make('last_name'),
-                TextColumn::make('email'),
-                TextColumn::make('phone'),
-                TextColumn::make('position'),
-                TextColumn::make('salary'),
-                TextColumn::make('created_at'),
-                TextColumn::make('updated_at'),
+                TextColumn::make('first_name')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('last_name')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('email')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('phone')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('position')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('salary')
+                    ->money('ksh')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('created_at')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('updated_at')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 //
