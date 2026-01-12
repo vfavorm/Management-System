@@ -3,21 +3,17 @@
 namespace App\Filament\Resources\Employees\Pages;
 
 use App\Filament\Resources\Employees\EmployeeResource;
-use Filament\Actions\DeleteAction;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditEmployee extends EditRecord
+class ViewEmployee extends ViewRecord
 {
     protected static string $resource = EmployeeResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            EditAction::make(),
         ];
-    }
-    protected function getRedirectUrl(): string
-    {
-    return $this->getResource()::getUrl('index');
     }
 }
